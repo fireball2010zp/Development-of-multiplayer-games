@@ -1,135 +1,93 @@
-using Photon.Pun;
-using Photon.Realtime;
-using PlayFab;
 using PlayFab.ClientModels;
-using UnityEngine.UI;
+using PlayFab;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEditor.PackageManager;
+using System.Linq;
+using UnityEngine.SceneManagement;
 
-public class Authorization : MonoBehaviourPunCallbacks
+public class Authorization : MonoBehaviour
 {
-    [SerializeField] private string _playFabTitle;
+    [SerializeField] private InputField _userNameField;
+    [SerializeField] private InputField _userPasswordField;
+    [SerializeField] private Button _registrationButton;
+    [SerializeField] private Text _errorText;
+
+    [SerializeField] private Slider Slider;
+    [SerializeField] private GameObject Indicator;
     
-    [SerializeField] private Button _playFabLogIn;
-    [SerializeField] private Text _playFabConnectInfo;
+    private string _userName;
+    private string _userPassword;
 
-    [SerializeField] private Button _photonConnect;
-    [SerializeField] private Text _photonConnectInfo;
-    [SerializeField] private Text _photonConnectTextOnButton;
-
-    void Start()
+    private void Awake()
     {
-        _photonConnect.enabled = false;
+        _userNameField.onValueChanged.AddListener(SetUserName); // +=
+        _userPasswordField.onValueChanged.AddListener(SetUserPassword);
+        _registrationButton.onClick.AddListener(Submit);
+        //LogInBackButton.onClick.AddListener(() => { panelManager.BackOnMainPanel(gameObject); });
+    }
 
-        if (string.IsNullOrEmpty(PlayFabSettings.staticSettings.TitleId)) // проверка, настроено ли свойство TitleId в настройках или нет
-            PlayFabSettings.staticSettings.TitleId = _playFabTitle;
+    private void SetUserName(string value)
+    {
+        _userName = value;
+    }
+    
+    private void SetUserPassword(string value)
+    {
+        _userPassword = value;
+    }
 
-        var request = new LoginWithCustomIDRequest // запрос на создание нового юзера в PlayFab
+    public void Submit()
+    {
+        var slider = StartSlider();
+
+        PlayFabClientAPI.LoginWithPlayFab(new LoginWithPlayFabRequest
         {
-            CustomId = "TestUser",
-            CreateAccount = true
-        };
-
-        _playFabLogIn.onClick.AddListener(() => LogInPlayFab(request));
-        _photonConnect.onClick.AddListener(() => ClickOnPhoton());
-    }
-
-    private void LogInPlayFab(LoginWithCustomIDRequest request)
-    {
-        // запрос на обработку, если ли игрок в базе PlayFab
-        PlayFabClientAPI.LoginWithCustomID(request,
-            result =>
-            {
-                Debug.Log(result.PlayFabId);
-                PhotonNetwork.AuthValues = new AuthenticationValues(result.PlayFabId);
-                PhotonNetwork.NickName = result.PlayFabId;
-
-                _playFabConnectInfo.text = "Playfab is connected!";
-                _playFabConnectInfo.color = Color.green;
-                _playFabLogIn.enabled = false;
-                _photonConnect.enabled = true;
-            },
-            error =>
-            {   
-                Debug.LogError(error);
-                _playFabConnectInfo.text = "Playfab isn't connected!";
-                _playFabConnectInfo.color = Color.red;
-            });
-
-    }
-
-    private void ClickOnPhoton()
-    {
-        if (PhotonNetwork.IsConnected)
+            Username = _userName,
+            Password = _userPassword,
+        }, result =>
         {
-            Disconnect();
-            _photonConnectInfo.text = "Photon is disconnected!";
-            _photonConnectInfo.color = Color.red;
-            _photonConnectTextOnButton.text = "Connect to Photon";
-        }
-        else
+            _errorText.gameObject.SetActive(false);
+            Debug.Log($"User entered: {result.LastLoginTime}");
+
+            StopSlider(slider);
+            SceneManager.LoadScene(1); // go to Lobby Scene
+        }, error =>
         {
-            Connect();
-            _photonConnectInfo.text = "Photon is connected!";
-            _photonConnectInfo.color = Color.green;
-            _photonConnectTextOnButton.text = "Disconnect Photon";
-        }
+            _errorText.gameObject.SetActive(true);
+            if(error.ErrorDetails is not null)
+            _errorText.text = error.ErrorDetails.FirstOrDefault().Value.FirstOrDefault() ?? "";
+            Debug.LogError(error);
+            StopSlider(slider);
+        });
     }
 
-    // метод авторизации сцены в Photon
-    private void Connect()
+    public Coroutine StartSlider()
     {
-        PhotonNetwork.AutomaticallySyncScene = true; // как только MasterClient вызывает загрузку следующей сцены методом PhotonNetwork.LoadLevel(), все подключенные к нему игроки автоматически делают то же самое. Таким образом все попадут в один игровой мир
+        return StartCoroutine(CorutineSlider());
+    }
 
-        if (PhotonNetwork.IsConnected) // мы проверяем, подключены или нет, если подключены - присоединяемся, иначе инициируем подключение к серверу
+    public void StopSlider(Coroutine coroutine)
+    {
+        Indicator.SetActive(false);
+        StopCoroutine(coroutine);
+    }
+
+    private IEnumerator CorutineSlider()
+    {
+        Indicator.SetActive(true);
+        Slider.value = 0;
+
+        for (int i = 0; i < 100; i++)
         {
-            PhotonNetwork.JoinRandomOrCreateRoom(roomName: $"Room N{Random.Range(0, 9999)}");
+            Slider.value = i;
+            yield return new WaitForFixedUpdate();
         }
-        else
-        {   //мы должны в первую очередь подключиться к Photon Online Server
-            PhotonNetwork.ConnectUsingSettings(); // публичный статический метод класса PhotonNetwork, который обеспечивает соединение с сервером на основании тех настроек, которые заданы в PhotonServerSettings
-            PhotonNetwork.GameVersion = PhotonNetwork.AppVersion; // чтобы игроки с разными версиями приложения не могли играть друг с другом, поскольку у них на клиенте может быть разный набор фичей
-        }
+
+        Indicator.SetActive(false);
     }
 
-    // метод отключения от сцены в Photon
-    private void Disconnect()
-    {
-        if (PhotonNetwork.InRoom)
-        {
-            PhotonNetwork.LeaveRoom();
-        }
-        PhotonNetwork.Disconnect();
-    }
 
-    public override void OnConnectedToMaster()
-    {
-        base.OnConnectedToMaster();
-        Debug.Log("OnConnectedToMaster");
-        if (!PhotonNetwork.InRoom)
-            PhotonNetwork.JoinRandomOrCreateRoom(roomName: $"Room N{Random.Range(0, 9999)}");
-    }
-
-    public override void OnCreatedRoom()
-    {
-        base.OnCreatedRoom();
-        Debug.Log("OnCreatedRoom");
-    }
-
-    public override void OnJoinedRoom()
-    {
-        base.OnJoinedRoom();
-        Debug.Log($"OnJoinedRoom {PhotonNetwork.CurrentRoom.Name}");
-    }
-
-    public override void OnLeftRoom()
-    {
-        base.OnLeftRoom();
-        Debug.Log("OnLeftRoom");
-    }
-
-    public override void OnDisconnected(DisconnectCause cause)
-    {
-        base.OnDisconnected(cause);
-        Debug.Log("OnDisconnected");
-    }
 }
