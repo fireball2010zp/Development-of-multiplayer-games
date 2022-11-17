@@ -1,0 +1,740 @@
+{
+  "CatalogVersion": "Attack-Defense-v0.1",
+  "Catalog": [
+    {
+      "ItemId": "rfl",
+      "ItemClass": "Attack",
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": "Rifle",
+      "Description": "Rifle with manual reloading, have the magazine with 10 ammo",
+      "VirtualCurrencyPrices": {
+        "SC": 50
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "Attack",
+        "Rifle"
+      ],
+      "CustomData": "{\"Count\":\"1\"}",
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "rfl_ammo",
+      "ItemClass": "Attack",
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": "Rifle ammunition",
+      "Description": "Ammunition for rifle. Amount in the block for rifle magazine - 10",
+      "VirtualCurrencyPrices": {
+        "SC": 5
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "Attack",
+        "Rifle ammunition"
+      ],
+      "CustomData": "{\"Count\":\"10\"}",
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "pstl",
+      "ItemClass": "Attack",
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": "Pistol",
+      "Description": "Pistol with auto reloading, have the magazine with 15 ammo",
+      "VirtualCurrencyPrices": {
+        "SC": 30
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "Attack",
+        "Pistol"
+      ],
+      "CustomData": "{\"Count\":\"1\"}",
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "pstl_ammo",
+      "ItemClass": "Attack",
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": "Pistol ammunition",
+      "Description": "Ammunition for pistol. Amount in the block for pistol magazine - 15",
+      "VirtualCurrencyPrices": {
+        "SC": 3
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "Attack",
+        "Pistol ammunition"
+      ],
+      "CustomData": "{\"Count\":\"15\"}",
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "crssbw",
+      "ItemClass": "Attack",
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": "Crossbow",
+      "Description": "Crossbow with manual reloading, have the quiver with 5 arrows",
+      "VirtualCurrencyPrices": {
+        "SC": 25
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "Attack",
+        "Crossbow"
+      ],
+      "CustomData": "{\"Count\":\"1\"}",
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "arrws",
+      "ItemClass": "Attack",
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": "Arrows",
+      "Description": "Arrows for crossbow. Amount in the quiver for crossbow - 5",
+      "VirtualCurrencyPrices": {
+        "SC": 3
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "Attack",
+        "Arrows"
+      ],
+      "CustomData": "{\"Count\":\"5\"}",
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "grnd",
+      "ItemClass": "Attack",
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": "Grenade",
+      "Description": "Hand grenade to hit at a distance of 50 meters",
+      "VirtualCurrencyPrices": {
+        "SC": 2
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "Attack",
+        "Grenade"
+      ],
+      "CustomData": "{\"Count\":\"1\"}",
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "knf",
+      "ItemClass": "Attack",
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": "Knife",
+      "Description": "Combat knife for infantrymen.",
+      "VirtualCurrencyPrices": {
+        "SC": 2
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "Attack",
+        "Knife"
+      ],
+      "CustomData": "{\"Count\":\"1\"}",
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": true,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "shld",
+      "ItemClass": "Armor",
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": "Shield",
+      "Description": "Shield for body protection (from ammo, arrows & grenades)",
+      "VirtualCurrencyPrices": {
+        "SC": 5
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "Armor",
+        "Shield"
+      ],
+      "CustomData": "{\"Count\":\"1\"}",
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "hlmt",
+      "ItemClass": "Armor",
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": "Helmet",
+      "Description": "Helmet for head protection (from ammo, arrows & grenades)",
+      "VirtualCurrencyPrices": {
+        "SC": 2
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "Armor",
+        "Helmet"
+      ],
+      "CustomData": "{\"Count\":\"1\"}",
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": true,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "bd_armr",
+      "ItemClass": "Armor",
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": "Body armor",
+      "Description": "Body armor for body protection (from ammo, arrows & grenades)",
+      "VirtualCurrencyPrices": {
+        "SC": 3
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "Armor",
+        "Body armor"
+      ],
+      "CustomData": "{\"Count\":\"1\"}",
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": true,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "kn_pds",
+      "ItemClass": "Armor",
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": "Knee pads",
+      "Description": "Knee pads for leg protection (from arrows & grenades)",
+      "VirtualCurrencyPrices": {
+        "SC": 1
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "Armor",
+        "Knee pads"
+      ],
+      "CustomData": "{\"Count\":\"1\"}",
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": true,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "rifle_bndl",
+      "ItemClass": null,
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": null,
+      "Description": null,
+      "VirtualCurrencyPrices": {},
+      "RealCurrencyPrices": null,
+      "Tags": [],
+      "CustomData": null,
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": {
+        "BundledItems": [],
+        "BundledResultTables": [
+          "rifle_dt"
+        ],
+        "BundledVirtualCurrencies": {
+          "SC": 10
+        }
+      },
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": false,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "pistol_bndl",
+      "ItemClass": null,
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": null,
+      "Description": null,
+      "VirtualCurrencyPrices": {},
+      "RealCurrencyPrices": {},
+      "Tags": [],
+      "CustomData": null,
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": {
+        "BundledItems": [],
+        "BundledResultTables": [
+          "pistol_dt"
+        ],
+        "BundledVirtualCurrencies": {
+          "SC": 5
+        }
+      },
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": false,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "crossbow_bndl",
+      "ItemClass": null,
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": null,
+      "Description": null,
+      "VirtualCurrencyPrices": {},
+      "RealCurrencyPrices": {},
+      "Tags": [],
+      "CustomData": null,
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": {
+        "BundledItems": [],
+        "BundledResultTables": [
+          "crossbow_dt"
+        ],
+        "BundledVirtualCurrencies": {
+          "SC": 5
+        }
+      },
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": false,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "armor_bndl",
+      "ItemClass": null,
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": null,
+      "Description": null,
+      "VirtualCurrencyPrices": {},
+      "RealCurrencyPrices": null,
+      "Tags": [],
+      "CustomData": null,
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": {
+        "BundledItems": [],
+        "BundledResultTables": [
+          "armor_dt"
+        ],
+        "BundledVirtualCurrencies": {
+          "SC": 5
+        }
+      },
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": false,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "rifle_cntr",
+      "ItemClass": "rifle_box",
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": null,
+      "Description": null,
+      "VirtualCurrencyPrices": {
+        "SC": 50
+      },
+      "RealCurrencyPrices": null,
+      "Tags": [
+        "Attack",
+        "Rifle",
+        "Container",
+        "Box"
+      ],
+      "CustomData": null,
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": {
+        "KeyItemId": null,
+        "ItemContents": [
+          "rfl"
+        ],
+        "ResultTableContents": [],
+        "VirtualCurrencyContents": null
+      },
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "pistol_cntr",
+      "ItemClass": "pistol_box",
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": null,
+      "Description": null,
+      "VirtualCurrencyPrices": {
+        "SC": 30
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "Attack",
+        "Pistol",
+        "Container",
+        "Box"
+      ],
+      "CustomData": null,
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": {
+        "KeyItemId": null,
+        "ItemContents": [
+          "pstl"
+        ],
+        "ResultTableContents": [],
+        "VirtualCurrencyContents": null
+      },
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "crossbow_cntr",
+      "ItemClass": "crossbow_box",
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": null,
+      "Description": null,
+      "VirtualCurrencyPrices": {
+        "SC": 25
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "Attack",
+        "Crossbow",
+        "Container",
+        "Box"
+      ],
+      "CustomData": null,
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": {
+        "KeyItemId": null,
+        "ItemContents": [
+          "crssbw"
+        ],
+        "ResultTableContents": [],
+        "VirtualCurrencyContents": null
+      },
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "shield_cntr",
+      "ItemClass": "shield_box",
+      "CatalogVersion": "Attack-Defense-v0.1",
+      "DisplayName": null,
+      "Description": null,
+      "VirtualCurrencyPrices": {
+        "SC": 5
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "Attack",
+        "Shield",
+        "Container",
+        "Box"
+      ],
+      "CustomData": null,
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": {
+        "KeyItemId": null,
+        "ItemContents": [
+          "shld"
+        ],
+        "ResultTableContents": [],
+        "VirtualCurrencyContents": null
+      },
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    }
+  ],
+  "DropTables": [
+    {
+      "TableId": "armor_dt",
+      "Nodes": [
+        {
+          "ResultItemType": "ItemId",
+          "ResultItem": "kn_pds",
+          "Weight": 3
+        },
+        {
+          "ResultItemType": "ItemId",
+          "ResultItem": "bd_armr",
+          "Weight": 1
+        },
+        {
+          "ResultItemType": "ItemId",
+          "ResultItem": "hlmt",
+          "Weight": 2
+        }
+      ]
+    },
+    {
+      "TableId": "crossbow_dt",
+      "Nodes": [
+        {
+          "ResultItemType": "ItemId",
+          "ResultItem": "crssbw",
+          "Weight": 1
+        },
+        {
+          "ResultItemType": "ItemId",
+          "ResultItem": "arrws",
+          "Weight": 5
+        }
+      ]
+    },
+    {
+      "TableId": "grenade_dt",
+      "Nodes": [
+        {
+          "ResultItemType": "ItemId",
+          "ResultItem": "grnd",
+          "Weight": 1
+        }
+      ]
+    },
+    {
+      "TableId": "pistol_dt",
+      "Nodes": [
+        {
+          "ResultItemType": "ItemId",
+          "ResultItem": "pstl",
+          "Weight": 1
+        },
+        {
+          "ResultItemType": "ItemId",
+          "ResultItem": "pstl_ammo",
+          "Weight": 5
+        }
+      ]
+    },
+    {
+      "TableId": "rifle_dt",
+      "Nodes": [
+        {
+          "ResultItemType": "ItemId",
+          "ResultItem": "rfl",
+          "Weight": 1
+        },
+        {
+          "ResultItemType": "ItemId",
+          "ResultItem": "rfl_ammo",
+          "Weight": 5
+        }
+      ]
+    },
+    {
+      "TableId": "shield_dt",
+      "Nodes": [
+        {
+          "ResultItemType": "ItemId",
+          "ResultItem": "shld",
+          "Weight": 1
+        }
+      ]
+    }
+  ]
+}

@@ -14,6 +14,8 @@ public class Login : MonoBehaviourPunCallbacks//, IConnectionCallbacks, IInRoomC
     private const string GAME_VERSION = "dev";
     private const string AUTHENTIFICATION_KEY = "AUTHENTIFICATION_KEY";
 
+    [SerializeField] private CatalogManager _catalog; 
+
     //private void Awake()
     //{
     //    PhotonNetwork.AddCallbackTarget(this);
@@ -39,6 +41,9 @@ public class Login : MonoBehaviourPunCallbacks//, IConnectionCallbacks, IInRoomC
             CreateAccount = needCreation
         };
         PlayFabClientAPI.LoginWithCustomID(request, Success, Fail, data);
+
+
+
     }
 
     private void Success(LoginResult result)
@@ -50,6 +55,7 @@ public class Login : MonoBehaviourPunCallbacks//, IConnectionCallbacks, IInRoomC
         Connect();
 
         PlayFabClientAPI.GetAccountInfo(new GetAccountInfoRequest(), SiccessInfo, Error);
+        _catalog.Init();
     }
 
     private void Error(PlayFabError error)
